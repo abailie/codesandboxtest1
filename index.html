@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+	<style>
+		.icon { grid-area: icon; }
+		.username { grid-area: username; font-weight: bold;}
+		.balancelabel { grid-area: balancelabel; }
+		.balancevalue { grid-area: balancevalue; }
+		.totalduelabel {grid-area: totalduelabel;}
+		.totalduevalue {grid-area: totalduevalue;}
+		
+		.paymentlabel { grid-area: paymentlabel; }
+		.paymentinput { grid-area: paymentinput; }
+		.tiplabel { grid-area: tiplabel; }
+		.tipinput { grid-area: tipinput; }
+		.totalpaymentlabel { grid-area: totalpaymentlabel; }
+		.totalpaymentinput { grid-area: totalpaymentinput; }
+
+		.key1 { grid-area: key1; }
+		.key2 { grid-area: key2; }
+		.key3 { grid-area: key3; }
+		.key4 { grid-area: key4; }
+		.key5 { grid-area: key5; }
+		.key6 { grid-area: key6; }
+		.key7 { grid-area: key7; }
+		.key8 { grid-area: key8; }
+		.key9 { grid-area: key9; }
+		.keyblank { grid-area: keyblank; }
+		.key0 { grid-area: key0; }
+		.key00 { grid-area: key00; }
+
+		.keyclear { grid-area: keyclear; }
+		.keyback { grid-area: keyback; }
+		.keydone { grid-area: keydone; }
+		
+		input.valueinput{
+			background-color: transparent;
+			width: 100%;
+			font-size: 20px;
+			color: white;
+			border-width: 0px;
+			text-align: end;
+		}
+
+		button.keyboard{
+			width: 100%;
+			height: 100%;
+			background-color: transparent;
+			border-width: 0px;
+			color:white;
+			font-size: 20px; 
+		}
+
+		button.keyboard-done{
+			color:#4873f5;
+		}
+
+		button.keyboard-light{
+			
+		}
+
+		div.transouter {
+			-moz-border-radius: 25px;
+			border-radius: 25px;
+			border: 2px solid #E18330;
+			background-color: #18191d;
+			color: white;
+			padding: 10px;
+			width: 380px;
+			align-items: center;
+			text-align: center;
+			position: fixed;
+			left: 50%;
+			transform: translate(-50%, 10%);
+		}
+
+		div.keyboardouter {
+			-moz-border-radius: 25px;
+			border-radius: 25px;
+			border: 2px solid #E18330;
+			background-color: #18191d;
+			color: white;
+			padding: 10px;
+			width: 600px;
+			height: 280px;
+			align-items: center;
+			text-align: center;
+			position: fixed;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, 0%);
+		}
+		.grid-container-balance {
+			display: grid;
+			margin: 5px;
+			border-radius: 5px;
+			grid-template-areas:
+				'icon username username username username username username username'
+				'icon balancelabel balancelabel balancelabel balancevalue balancevalue balancevalue balancevalue'
+				'icon totalduelabel totalduelabel totalduelabel totalduevalue totalduevalue totalduevalue totalduevalue';
+			grid-gap: 2px;
+			background-color: #232428;
+			padding: 5px;
+		}
+
+		.grid-container-balance > div {
+			background-color: transparent;
+			text-align: start;
+			padding: 2px ;
+			font-size: 20px;
+		}
+		
+
+		.grid-container-transaction {
+			display: grid;
+			margin: 5px;
+			border-radius: 5px;
+			grid-template-areas:
+				'paymentlabel paymentlabel paymentlabel paymentlabel paymentinput paymentinput paymentinput paymentinput'
+				'tiplabel tiplabel tiplabel tiplabel tipinput tipinput tipinput tipinput'
+				'totalpaymentlabel totalpaymentlabel totalpaymentlabel totalpaymentlabel totalpaymentinput totalpaymentinput totalpaymentinput totalpaymentinput';
+			grid-gap: 2px;
+			background-color: #232428;
+			padding: 2px;
+		}
+				
+		.grid-container-transaction > div {
+			background-color: transparent;
+			text-align: start;
+			padding: 6px ;
+			font-size: 20px;
+		}
+
+		.grid-container-keyboard {
+			display: grid;
+			margin: 5px;
+			border-radius: 5px;
+			grid-template-areas:
+				'keyclear key1 key2 key3 keyback'
+				'keyclear key4 key5 key6 keydone'
+				'keyclear key7 key8 key9 keydone'
+				'keyclear keyblank key0 key00 blankrb';
+			grid-gap: 5px;
+			background-color: transparent;
+			padding: 2px;
+			height: 270px;
+			width: 590px;
+		}
+				
+		.grid-container-keyboard > div {
+			background-color: #232428;
+			text-align: center;
+			padding: 0px ;
+			font-size: 20px;
+		}
+		
+		title-area{
+			font-size: 25px;
+
+		}
+		</style>
+
+<head>
+	<title>Parcel Sandbox</title>
+	<meta charset="UTF-8" />
+	<link rel="stylesheet" href="src/styles.css">
+	
+</head>
+
+<body style="background-color: black">
+
+<div class=transouter>
+	<div class="grid-container-balance">
+		<div class="icon">
+			<img style="height: 80px; width: 80px; margin:10px" src="data:image/png;base64,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" />
+		</div>
+		<div class="username">Peter van den Berg</div> 
+		<div class="balancelabel">Balance:</div>
+		<div class="balancevalue" style=" text-align: end">435.00</div>
+		<div class="totalduelabel">Total due:</div>
+		<div class="totalduevalue" style=" text-align: end">8.40</div>
+	</div>
+	<div class="grid-container-transaction">
+		<div class="paymentlabel">Payment</div> 
+		<div class="paymentinput"> <input type="text" placeholder="8.40"  class="valueinput"/> </div> 
+		<div class="tiplabel">Tip</div> 
+		<div class="tipinput"> <input type="text" placeholder="0.00"  class="valueinput"/> </div> 
+		<div class="totalpaymentlabel">Total Payment</div> 
+		<div class="totalpaymentinput"> <input type="text" placeholder="8.40" class="valueinput"/> </div> 
+	</div>
+</div>
+<div class=keyboardouter>
+		<div class="grid-container-keyboard">
+				<div class="keyclear" style="background-color:#303136"><button class="keyboard">Clear</button> </div>
+				<div class="key1"><button class="keyboard">1</button> </div>
+				<div class="key2"><button class="keyboard">2</button> </div>
+				<div class="key3"><button class="keyboard">3</button> </div>
+				<div class="key4"><button class="keyboard">4</button> </div>
+				<div class="key5"><button class="keyboard">5</button> </div>
+				<div class="key6"><button class="keyboard">6</button> </div>
+				<div class="key7"><button class="keyboard">7</button> </div>
+				<div class="key8"><button class="keyboard">8</button> </div>
+				<div class="key9"><button class="keyboard">9</button> </div>
+				<div class="key0"><button class="keyboard">0</button> </div>
+				<div class="key00"><button class="keyboard">00</button> </div>
+				<div class="keyback" style="background-color:#303136"><button class="keyboard" ><<</button> </div>
+				<div class="keydone" style="background-color:#303136"><button class="keyboard keyboard-done">Done</button> </div>
+				
+			</div>
+
+</div>
+</body>
+
+</html>
